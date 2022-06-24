@@ -12,7 +12,7 @@ action 只是一个普通的js对象，必须要有type字段。
 reducer 是一个函数，接受state,  action，返回newState。
 - 必须使用不可变逻辑，不能直接修改state，必须复制一个state再修改
 - 禁止任何异步逻辑、依赖随机值或导致其他“副作用”的代码
-- 如果使用tookit的话，可能允许在reducer里写可变的逻辑，但是这实际上是不可变的, toolkit会完成剩下的事情。
+- 如果使用toolkit的话，可能允许在reducer里写可变的逻辑，但是这实际上是不可变的, toolkit会完成剩下的事情。
 
 ## redux in flutter
 

@@ -14,3 +14,11 @@ reducer 是一个函数，接受state,  action，返回newState。
 - 禁止任何异步逻辑、依赖随机值或导致其他“副作用”的代码
 - 如果使用tookit的话，可能允许在reducer里写可变的逻辑，但是这实际上是不可变的, toolkit会完成剩下的事情。
 
+## redux in flutter
+
+### flutter_redux
+ref: https://pub.dev/packages/flutter_redux
+- 将redux的特性封装成dart语言的风格
+- StoreProvider 包装需要state的若干组件
+- StoreConnect 逻辑比较复杂，分converter和builder. converter默认接受state为参数，可以返回一个匿名函数或者一个值res。builder接受context和res, context是上下文的运行环境，res就是converter返回的。通过StoreConnector可以实现dart Widget + action + subscribe 的功能。
+

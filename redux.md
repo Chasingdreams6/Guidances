@@ -22,3 +22,7 @@ ref: https://pub.dev/packages/flutter_redux
 - StoreProvider 包装需要state的若干组件
 - StoreConnect 逻辑比较复杂，分converter和builder. converter默认接受state为参数，可以返回一个匿名函数或者一个值res。builder接受context和res, context是上下文的运行环境，res就是converter返回的。通过StoreConnector可以实现dart Widget + action + subscribe 的功能。
 
+### redux
+ref: https://pub.dev/packages/redux
+- 更加贴近web端风格，使用了querySelector, event listener等，比较像js的写法
+

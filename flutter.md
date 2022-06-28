@@ -21,6 +21,11 @@ ref: https://juejin.cn/post/7026709670274269214
 #### AspectRatio
 可以使用AspectRatio小部件将子元素的大小调整为特定的长宽比。首先，它尝试布局约束允许的最大宽度，并通过将给定的高宽比应用于宽度来决定高度。
 
+#### Hint
+在使用expanded的时候，如果固定了多个expanded的flex比例，且其中某些的长度是固定的，就有可能出现bottom overflow的问题。因为某些的长度固定，按照比例算出其他组件的长度
+，总的长度就可能会超。
+
+#### scalable widget ? 
 
 ## navigate
 ### navigator

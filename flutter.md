@@ -26,7 +26,7 @@ ref: https://juejin.cn/post/7026709670274269214
 ### navigator
 ref: https://docs.flutter.dev/cookbook/navigation/hero-animations
 navigator类似一个栈，通过push，把一个widget push到栈的顶，就可以显示这个页面。通过pop，可以回到上一个页面。
-push:
+
 ```dart
 Navigator.push(
               context,

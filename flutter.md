@@ -20,3 +20,19 @@ ref: https://juejin.cn/post/7026709670274269214
 
 #### AspectRatio
 可以使用AspectRatio小部件将子元素的大小调整为特定的长宽比。首先，它尝试布局约束允许的最大宽度，并通过将给定的高宽比应用于宽度来决定高度。
+
+
+## navigate
+### navigator
+ref: https://docs.flutter.dev/cookbook/navigation/hero-animations
+navigator类似一个栈，通过push，把一个widget push到栈的顶，就可以显示这个页面。通过pop，可以回到上一个页面。
+push:
+```dart
+Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondRoute()),
+            );
+Navigator.pop(context);
+```
+
+            

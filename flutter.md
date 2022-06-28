@@ -34,5 +34,33 @@ Navigator.push(
             );
 Navigator.pop(context);
 ```
-
+### named navigator
+ref: https://docs.flutter.dev/cookbook/navigation/named-routes
+通过在material App中将每个页面分配一个route name，在push时就可以直接push这个name，而不是push widget.
+这样做是因为如果有很多地方都指向同一个不可变的页面，之前的做法会存在很多相同的widget，现在的做法只会出现一个 widget
+```dart
+MaterialApp(
+  title: 'Named Routes Demo',
+  // Start the app with the "/" named route. In this case, the app starts
+  // on the FirstScreen widget.
+  initialRoute: '/',
+  routes: {
+    // When navigating to the "/" route, build the FirstScreen widget.
+    '/': (context) => const FirstScreen(),
+    // When navigating to the "/second" route, build the SecondScreen widget.
+    '/second': (context) => const SecondScreen(),
+  },
+)
+// Within the `FirstScreen` widget
+onPressed: () {
+  // Navigate to the second screen using a named route.
+  Navigator.pushNamed(context, '/second');
+}
+// Within the SecondScreen widget
+onPressed: () {
+  // Navigate back to the first screen by popping the current route
+  // off the stack.
+  Navigator.pop(context);
+}
+```
             

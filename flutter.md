@@ -1,3 +1,31 @@
+## flutter 哲学
+1. Everything is Widget.
+
+## flutter渲染机制
+ref: https://juejin.cn/post/6844903777565147150
+
+Widget是不可变的，只是一个配置信息，可以多次出现，真正的实体是element-tree.  
+BuildContext对象实际上就是Element对象，BuildContext 接口用于阻止对 Element 对象的直接操作。
+在build(context)时，首先创建一个element,再将widget对应的配置信息导入，build实际是widget的方法，需要一个element的函数，就是BuildContext.
+#### StatelessWidget
+首先它会调用StatelessWidget的 createElement 方法，并根据这个widget生成StatelesseElement对象。
+将这个StatelesseElement对象挂载到element树上。
+StatelesseElement对象调用widget的build方法，并将element自身作为BuildContext传入。
+#### StatefulWidget
+首先同样也是调用StatefulWidget的 createElement方法，并根据这个widget生成StatefulElement对象，并保留widget引用。
+将这个StatefulElement挂载到Element树上。
+根据widget的 createState 方法创建State。
+StatefulElement对象调用state的build方法，并将element自身作为BuildContext传入。
+#### navigator必须要在一个widget中使用（有father node）
+当我们在 build 函数中使用Navigator.of(context)的时候，这个context实际上是通过 MyApp 这个widget创建出来的Element对象，而of方法向上寻找祖先节点的时候（MyApp的祖先节点）并不存在MaterialApp，也就没有它所提供的Navigator。
+所以当我们把Scaffold部分拆成另外一个widget的时候，我们在FirstPage的build函数中，获得了FirstPage的BuildContext，然后向上寻找发现了MaterialApp，并找到它提供的Navigator，于是就可以愉快进行页面跳转了。
+
+## 语法
+1. 以下划线（_）开头的成员或类是私有的。
+2. 创建一个含状态的组件需要两个类，外面的类是statefulWidget，含有一个createState的函数，里面的类是一个State<T>模板，T是外面statefulWidget的名字，
+  具体的逻辑写在State<T>中，可以使用stful语法糖自动创建一个含状态组件。
+3. https://flutter.cn/docs/development/ui/interactive 由父组件管理状态，给子组件一个回调函数。
+
 ## layout
 ### 构建响应式layout
 响应式layout可以自动适应不同设备大小

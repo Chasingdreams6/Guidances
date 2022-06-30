@@ -101,6 +101,7 @@ onPressed: () {
 1. 一般前端的test中不允许发http请求，因为网络请求的结果可能不稳定，需要用mock拦截http请求，将所有的http请求置换为200OK. flutter中的一个库是https://pub.dev/packages/network_image_mock
 2. find.test('str')，即使是一行的渲染，有可能是两个不同的组件，也许不能直接find
 3. find.byKey(key)可以按key寻找组件，需要在组件内分配key
+4. 在点按某些按钮之后， 可能重新渲染，需要用pumpAndSettle()函数等几帧再检查。
 
 
 ## key

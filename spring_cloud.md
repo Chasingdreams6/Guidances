@@ -82,3 +82,21 @@ Spring Cloud Config 工作流程如下：
 - Config 客户端获取到配置信息，以支持服务的运行。
 
 朴素的实现的问题是，当git上的配置信息更新之后，server可以及时获取最新的消息，但client必须重启。可以使用spring cloud bus来实现自动刷新配置信息
+
+### Spring cloud alibaba
+Spring Cloud Alibaba 的应用场景如下：
+- 大型复杂的系统，例如大型电商系统。
+- 高并发系统，例如大型门户网站、商品秒杀系统。
+- 需求不明确，且变更很快的系统，例如创业公司业务系统。
+
+Spring cloud nacos 集合了eureka和config center的功能
+
+- Nacos server集成了服务注册中心，配置中心的功能，可以从官网直接下载
+- Nacos client是client，在server中自动注册，可以分为service provider-consumer.
+
+Nacos 支持部署server集群，可以使用nginx管理
+
+### Sentinel
+sentinel是alibaba提供的spring cloud hystrix，但比hystrix更加强大。
+
+应用场景：秒杀，高并发。

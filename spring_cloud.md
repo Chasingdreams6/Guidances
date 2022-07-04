@@ -63,4 +63,10 @@ API 网关就像整个微服务系统的门面一样，是系统对外的唯一�
 - Nginx+Lua
 - Traefik
 
-
+### Spring Cloud 动态路由
+默认情况下，Spring Cloud Gateway 会根据服务注册中心（例如 Eureka Server）中维护的服务列表，以服务名（spring.application.name）作为路径创建动态路由进行转发，从而实现动态路由功能。
+修改 application.yml 文件，将Route的Uri地址修改为
+```yml
+lb:/service-name
+```
+lb表示开启负载均衡。

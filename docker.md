@@ -7,3 +7,8 @@
 -  容器部署速度很快，可以快速地部署、下线
 
 ## 核心概念
+- Image 镜像，可以认为是可执行程序
+- container 容器，可以理解成运行后的进程（Image运行后就是container; docker run）
+- dockerfile 指定程序依赖的配置，环境，源码等
+- docker  docker服务器，可以根据dockerfile将程序打包成image
+- docker pull， 使用此命令从他人的repositry中clone好已经写好的image使用

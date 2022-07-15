@@ -12,3 +12,12 @@
 - dockerfile 指定程序依赖的配置，环境，源码等
 - docker  docker服务器，可以根据dockerfile将程序打包成image
 - docker pull， 使用此命令从他人的repositry中clone好已经写好的image使用
+
+## 一些命令
+- docker run -i -t [image] [path] -i表示使用输入模式， -t表示启动一个伪终端
+- docker run -d [image] [path] -d 表示在后台运行，会输出一个字符串（docker id）
+- docker ps 查看目前运行的container
+- docker logs [CID] 输入container id, 查看对应container的log
+- docker logs [CName]输入container name，查看对应 log
+- docker stop [CID] 停止对应container
+- 
